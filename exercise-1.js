@@ -14,16 +14,16 @@ function getDayTimeDifference(currentDate, refDate){
     
     var total = Math.abs(currentDate - refDate) / 1000;
 
-    let days = Math.floor(delta / 86400);
+    let days = Math.floor(total / 86400);
 
     total -= days * 86400; //seconds 
-    let hours = Math.floor(delta / 3600) % 24;
+    let hours = Math.floor(total / 3600) % 24;
 
     total -= hours * 3600;;//seconds
-    let minutes = Math.floor(delta / 60) % 60;
+    let minutes = Math.floor(total / 60) % 60;
 
     total -= minutes * 60;//seconds
-    let seconds =  Math.floor(delta % 60);
+    let seconds =  Math.floor(total % 60);
 
     
     return {
